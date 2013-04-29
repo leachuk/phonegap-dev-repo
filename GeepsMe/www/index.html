@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.3.1.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <script type="text/javascript" src="cordova-2.6.0.js"></script>
+        <script type="text/javascript" src="js/moment.min.js"></script>
+        <script type="text/javascript" src="js/lawnchair-0.6.1.min.js"></script>
+        <script type="text/javascript" src="js/lawnchair-adapter-indexed-db.js"></script>
+        <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
+        <script type="text/javascript" src="js/geepsme-app-0.0.1.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.3.1.js"></script>
+        <script type="text/javascript">
+            function onLoad(){
+                console.log("onLoad");
+                geepsme.initialize();
+                geepsme.storageInitialise();
+            }
+        </script>
+        <title>Geeps Me</title>
+    </head>
+    <body class="ui-mobile-viewport ui-overlay-c" onload="onLoad()">
+        <div data-role="content" id="controls">
+            <input id="record" type="button" value="record" onclick="geepsme.storageInitialise()"/>
+            <input id="displaydata" type="button" value="displaydata" onclick="geepsme.getStorageData()"/>
+            <input id="adddata" type="button" value="adddata" onclick="geepsme.setStorageData()"/>
+            </br>
+            <input id="startlogging" type="button" value="startlogging" onclick="geepsme.startLocationLog()"/>
+            <input id="stoplogging" type="button" value="stoplogging" onclick="geepsme.stopLocationLog()"/>
+        </div>
+        <div id="testoutput">
+
+        </div>
+        
+        <div id="testoutput2" data-role="collapsible-set" data-mini="true">
+
+        </div>
+    </body>
+</html>
